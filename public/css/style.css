@@ -1,3 +1,5 @@
+/* pi_green: RGB(28, 162, 153)  */
+
 .header_photo{
     height: 100%;
     width: 100%;
@@ -10,6 +12,10 @@
 
 .nav-opt{
     color: white;
+}
+
+.project_link{
+    color: RGB(28, 162, 153);
 }
 
 .line{
