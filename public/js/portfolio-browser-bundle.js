@@ -74,8 +74,8 @@
 	}, {
 		project_title: "弹电吉他的维特鲁威人",
 		project_detail: "say something say something say something say something say something say something say something",
-		project_img: "public/img/OVO_STOOL2.jpg",
-		project_detail_page: "public/img/OVO_STOOL0.jpg"
+		project_img: "public/img/弹电吉他的维特鲁威人.jpg",
+		project_detail_page: "public/img/弹电吉他的维特鲁威人.jpg"
 	}];
 	// ------------------------------
 	var PortfolioItem = React.createClass({
