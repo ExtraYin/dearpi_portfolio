@@ -1,7 +1,7 @@
 /* pi_green: RGB(28, 162, 153)  */
 
 .header_photo{
-    height: 100%;
+    height: 97%;
     width: 100%;
     opacity: 1;
 }
@@ -21,6 +21,7 @@
 }
 
 .footer-quote{
+    height: 3%;
     margin-top: 0px;
     text-align: center;
     background-color: black;
