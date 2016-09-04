@@ -12,6 +12,20 @@
 
 .nav-opt{
     color: white;
+    letter-spacing: 4px;
+}
+
+.nav-opt-eng{
+    color: white;
+    letter-spacing: 1px;
+}
+
+.footer-quote{
+    margin-top: 0px;
+    text-align: center;
+    background-color: black;
+    color: #cccccc;
+    font-family: 'helvetica neue';
 }
 
 .project_link{
