@@ -1,0 +1,39 @@
+.header_photo{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.navbar{
+    background-color: #333;
+}
+
+.nav-opt{
+    color: white;
+}
+
+.line{
+    height: 26px;
+    margin-top: 12px;
+    width: 1px;
+    background: #CCC;
+}
+
+.divundernev{
+    margin-top: 50px;
+}
+
+.resume{
+    width: 100%;
+}
+
+body {
+    font-family: 'helvetica arial', 'Microsoft YaHei';
+    margin: 0 auto
+}
+
+html {
+    display: block;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
