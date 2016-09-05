@@ -1,8 +1,10 @@
 //portfolio.js
 var React = require('react');
 var ReactDOM = require('react-dom');
+var TopNavBar = require('./top_nav.js');
 
 // ------------------------------
+
 var projects = [{
 					project_title: "PAVI_Office_system",
 					project_detail: "say something say something say something say something say something say something say something",
@@ -135,4 +137,5 @@ var PortfolioDisplay = React.createClass({
 });
 
 
+ReactDOM.render(<TopNavBar />, document.getElementById('portfolio_header'));
 ReactDOM.render(<PortfolioDisplay projects={projects}/>, document.getElementById('portfolio_root'));
