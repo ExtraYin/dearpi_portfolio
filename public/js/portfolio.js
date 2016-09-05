@@ -6,31 +6,46 @@ var ReactDOM = require('react-dom');
 var projects = [{
 					project_title: "PAVI_Office_system",
 					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/PAVI_Office_system.jpg",
-					project_detail_page: "public/img/PAVI_Office_system.jpg"
+					project_img: "public/img/project_img/PAVI_Office_system.jpg",
+					project_detail_page: "public/img/project_detail/PAVI1.jpg"
 				}, {
 					project_title: "加湿器",
 					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/加湿器.jpg",
-					project_detail_page: "public/img/加湿器.pdf"
+					project_img: "public/img/project_img/加湿器.jpg",
+					project_detail_page: "public/img/project_detail/加湿器.pdf"
 				}, {
 					project_title: "竹编几",
 					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/竹编几.jpg",
-					project_detail_page: "public/img/竹编几.pdf"
+					project_img: "public/img/project_img/竹编几.jpg",
+					project_detail_page: "public/img/project_detail/竹编几.pdf"
 				}, {
 					project_title: "OVO_STOOL",
 					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/OVO_STOOL.jpg",
-					project_detail_page: "public/img/OVO_STOOL0.jpg"
+					project_img: "public/img/project_img/OVO_STOOL.jpg",
+					project_detail_page: "public/img/project_detail/OVO_STOOL0.jpg"
 				}, {
 					project_title: "弹电吉他的维特鲁威人",
 					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/弹电吉他的维特鲁威人.jpg",
-					project_detail_page: "public/img/弹电吉他的维特鲁威人.jpg"
+					project_img: "public/img/project_img/弹电吉他的维特鲁威人.jpg",
+					project_detail_page: "public/img/project_detail/2015年夏季T恤图案设计.pdf"
 				}
 ];
+
 // ------------------------------
+var projectDetailPage = React.createClass({
+    render: function () {
+        return (
+            <div className="container">
+                <embed
+                    src={this.props.project['project_detail_page']}
+                    alt={this.props.project['project_title']}
+                    style={{width: '100%', height: "100%"}}
+                />
+            </div>
+        );
+    }
+});
+// -----------------------------
 var PortfolioItem = React.createClass({
     getInitialState() {
         return {
@@ -43,10 +58,33 @@ var PortfolioItem = React.createClass({
     handleHoverOff(){
         this.setState({opacity: "1"});
     },
+	showDetailPage() {
+        // ReactDOM.render(<projectDetailPage project={this.props.project} />, document.getElementById('portfolio_root'));
+        var thisStyle = {};
+        var match = this.props.project['project_detail_page'].match(/\.pdf$/);
+        console.log(match);
+        if (match){
+            thisStyle = {width: '100%', height: "100%"};
+        } else {
+            thisStyle = {width: '100%'};
+        }
+        ReactDOM.render(
+            <div className="container">
+                <embed
+                    src={this.props.project['project_detail_page']}
+                    alt={this.props.project['project_title']}
+                    style={thisStyle}
+                />
+            </div>
+            , document.getElementById('portfolio_root'));
+	},
 	render: function () {
 		return (
 			<div className="col-md-4 portfolio-item">
-                <a href={this.props.project['project_detail_page']}>
+                <a
+					// href={this.props.project['project_detail_page']}
+					onClick={this.showDetailPage}
+				>
                     <div className="project-img-wrapper">
                         <img
                             className="img-responsive"
@@ -59,7 +97,7 @@ var PortfolioItem = React.createClass({
                     </div>
                 </a>
                 <h3>
-                    <a className="project_link" href={this.props.project['project_detail_page']}>{this.props.project['project_title']}</a>
+                    <a className="project_link" onClick={this.showDetailPage}>{this.props.project['project_title']}</a>
                 </h3>
                 <p>{this.props.project['project_detail']}</p>
             </div>
