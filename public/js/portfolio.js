@@ -97,7 +97,7 @@ var PortfolioItem = React.createClass({
                     </div>
                 </a>
                 <h3>
-                    <a className="project_link" onClick={this.showDetailPage}>{this.props.project['project_title']}</a>
+                    <button style={{"background": "none", "border": "none"}}><a className="project_link" onClick={this.showDetailPage}>{this.props.project['project_title']}</a></button>
                 </h3>
                 <p>{this.props.project['project_detail']}</p>
             </div>
