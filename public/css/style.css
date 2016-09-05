@@ -21,8 +21,12 @@
 }
 
 .footer-quote{
-    height: 3%;
-    margin-top: 0px;
+    position:absolute;
+    left: 0;
+    top: 97%;
+    height: 4%;
+    width: 100%;
+    margin-top: -2px;
     text-align: center;
     background-color: black;
     color: #cccccc;
