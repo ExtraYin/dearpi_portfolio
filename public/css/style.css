@@ -26,7 +26,7 @@
     text-align: center;
     background-color: black;
     color: #cccccc;
-    font-family: 'helvetica neue';
+    font-family: 'helvetica';
 }
 
 .project_link{
@@ -49,7 +49,6 @@
 }
 
 .index_body{
-    overflow-x: hidden;
     overflow-y: hidden;
 }
 
