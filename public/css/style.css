@@ -35,10 +35,12 @@
 }
 
 .footer-quote{
+    padding-top: 3px;
     font-size: 0.6%;
 }
 
 .footer-sign{
+    padding-top: 3px;
     width: 16px;
 }
 
