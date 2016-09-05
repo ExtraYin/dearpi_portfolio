@@ -48,9 +48,14 @@
     width: 100%;
 }
 
+.index_body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 body {
     font-family: 'helvetica arial', 'Microsoft YaHei';
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 html {
