@@ -24,15 +24,25 @@
     letter-spacing: 1px;
 }
 
-.footer-quote{
+.footer{
     height: 4%;
     width: 100%;
     margin-top: 0;
     text-align: center;
     background-color: black;
     color: #cccccc;
-    font-family: 'helvetica';
+    font-family: 'helvetica neue';
 }
+
+.footer-quote{
+    font-size: 1%;
+    padding-top: 5px;
+}
+
+.footer-sign{
+    width: 20px;
+}
+
 
 .project_link{
     color: RGB(28, 162, 153);
