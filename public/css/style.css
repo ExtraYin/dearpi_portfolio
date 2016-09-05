@@ -34,6 +34,10 @@
     font-family: 'helvetica neue';
 }
 
+.footer-quote{
+    font-size: 0.6%;
+}
+
 .footer-sign{
     width: 16px;
 }
