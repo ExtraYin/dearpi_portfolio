@@ -1,4 +1,7 @@
 /* pi_green: RGB(28, 162, 153)  */
+.wrapper{
+    height: 100%;
+}
 
 .header_photo{
     height: 97%;
