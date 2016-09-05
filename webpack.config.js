@@ -1,7 +1,11 @@
 module.exports = {
-  entry: './public/js/portfolio.js',
+  entry: {
+    'index-browser-bundle': './public/js/index.js',
+    'portfolio-browser-bundle': './public/js/portfolio.js',
+    'resume-browser-bundle': './public/js/resume.js'
+  },
   output: {
-    filename: './public/js/portfolio-browser-bundle.js'
+    filename: './public/js/[name].js'
   },
   devtool: 'source-map',
   module: {
