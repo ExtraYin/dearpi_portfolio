@@ -5,7 +5,7 @@
 }
 
 .header_photo{
-    height: 92% !important;
+    height: 90% !important;
     width: 100%;
     opacity: 1;
 }
@@ -16,7 +16,7 @@
 }
 
 .footer-fixed{
-    height: 6% !important;
+    height: 8% !important;
     width: 100%;
     margin-top: 0;
     text-align: center;
