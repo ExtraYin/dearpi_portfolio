@@ -137,7 +137,7 @@ var PortfolioItem = React.createClass({
 						>{this.props.project['project_title']}</a>
 					</button>
                 </h3>
-                <p style={{"margin-left": "5px"}}>{this.props.project['project_detail']}</p>
+                <p style={{"margin-left": "6px"}}>{this.props.project['project_detail']}</p>
             </div>
 		);
 	}
