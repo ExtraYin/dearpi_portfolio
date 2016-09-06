@@ -3,19 +3,22 @@ var cookie = require("react-cookie");
 
 var nav_title = {
     "CN": {
-      "home": "主页",
-      "portfolio": "作品集",
-      "resume": "个人简介"
+        "home": "主页",
+        "portfolio": "作品集",
+        "resume": "个人简介",
+        "letterSpacing": 4
     },
     "EN": {
         "home": "Home",
         "portfolio": "Portfolio",
-        "resume": "Resume"
+        "resume": "Resume",
+        "letterSpacing": 0
     },
     "JA": {
         "home": "ホームぺーじ",
         "portfolio": "ポートフォリオ",
-        "resume": "履歴書"
+        "resume": "履歴書",
+        "letterSpacing": 4
     }
 };
 
@@ -52,24 +55,24 @@ var TopNavBar = React.createClass({
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
                             <li>
-                                <a className="nav-opt" href="index.html">{this.state.home}</a>
+                                <a style={{"letter-spacing": this.state.letterSpacing, "color": "white"}} href="index.html">{this.state.home}</a>
                             </li>
                             <li>
-                                <a className="nav-opt" href="portfolio.html">{this.state.portfolio}</a>
+                                <a style={{"letter-spacing": this.state.letterSpacing, "color": "white"}} href="portfolio.html">{this.state.portfolio}</a>
                             </li>
                             <li>
-                                <a className="nav-opt" href="resume.html">{this.state.resume}</a>
+                                <a style={{"letter-spacing": this.state.letterSpacing, "color": "white"}} href="resume.html">{this.state.resume}</a>
                             </li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
                             <li>
-                                <a className="nav-opt" onClick={this.changeToChinese}>中文</a>
+                                <a style={{"letter-spacing": 4, "color": "white"}} onClick={this.changeToChinese}>中文</a>
                             </li>
                             <li>
-                                <a className="nav-opt-eng" onClick={this.changeToEnglish}>English</a>
+                                <a style={{"color": "white"}} onClick={this.changeToEnglish}>English</a>
                             </li>
                             <li>
-                                <a className="nav-opt" onClick={this.changeToJapanese}>日本語</a>
+                                <a style={{"letter-spacing": 4, "color": "white"}} onClick={this.changeToJapanese}>日本語</a>
                             </li>
                         </ul>
                     </div>

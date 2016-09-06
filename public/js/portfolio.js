@@ -131,9 +131,13 @@ var PortfolioItem = React.createClass({
                     </div>
                 </a>
                 <h3>
-                    <button style={{"background": "none", "border": "none"}}><a className="project_link" onClick={this.showDetailPage}>{this.props.project['project_title']}</a></button>
+                    <button style={{"background": "none", "border": "none"}}>
+						<a className="project_link"
+						   onClick={this.showDetailPage}
+						>{this.props.project['project_title']}</a>
+					</button>
                 </h3>
-                <p>{this.props.project['project_detail']}</p>
+                <p style={{"margin-left": "5px"}}>{this.props.project['project_detail']}</p>
             </div>
 		);
 	}
@@ -147,7 +151,7 @@ var PortfolioRow = React.createClass({
 		}
 		return (
 			<div className="row">
-				{item_row};
+				{item_row}
 			</div>
 		);
 	}
