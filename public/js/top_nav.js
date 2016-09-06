@@ -32,17 +32,17 @@ var TopNavBar = React.createClass({
     changeToChinese(){
         this.setState(nav_title['CN']);
         cookie.save("langOpt", "CN", {path: '/'});
-        console.log(cookie.load("langOpt"));
+        this.props.changeLang("CN");
     },
     changeToEnglish(){
         this.setState(nav_title['EN']);
         cookie.save("langOpt", "EN", {path: '/'});
-        console.log(cookie.load("langOpt"));
+        this.props.changeLang("EN");
     },
     changeToJapanese(){
         this.setState(nav_title['JA']);
         cookie.save("langOpt", "JA", {path: '/'});
-        console.log(cookie.load("langOpt"));
+        this.props.changeLang("JA");
     },
     render: function () {
         console.log(cookie.load("langOpt"));

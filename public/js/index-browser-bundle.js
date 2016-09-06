@@ -19851,17 +19851,17 @@
 	    changeToChinese: function changeToChinese() {
 	        this.setState(nav_title['CN']);
 	        cookie.save("langOpt", "CN", { path: '/' });
-	        console.log(cookie.load("langOpt"));
+	        this.props.changeLang("CN");
 	    },
 	    changeToEnglish: function changeToEnglish() {
 	        this.setState(nav_title['EN']);
 	        cookie.save("langOpt", "EN", { path: '/' });
-	        console.log(cookie.load("langOpt"));
+	        this.props.changeLang("EN");
 	    },
 	    changeToJapanese: function changeToJapanese() {
 	        this.setState(nav_title['JA']);
 	        cookie.save("langOpt", "JA", { path: '/' });
-	        console.log(cookie.load("langOpt"));
+	        this.props.changeLang("JA");
 	    },
 	
 	    render: function render() {

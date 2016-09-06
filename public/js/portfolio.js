@@ -1,36 +1,65 @@
 //portfolio.js
 var React = require('react');
 var ReactDOM = require('react-dom');
+var cookie = require('react-cookie');
 var TopNavBar = require('./top_nav.js');
 
 // ------------------------------
 
 var projects = [{
-					project_title: "PAVI_Office_system",
-					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/project_img/PAVI_Office_system.jpg",
-					project_detail_page: "public/img/project_detail/PAVI1.jpg"
-				}, {
-					project_title: "加湿器",
-					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/project_img/加湿器.jpg",
-					project_detail_page: "public/img/project_detail/加湿器.pdf"
-				}, {
-					project_title: "竹编几",
-					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/project_img/竹编几.jpg",
-					project_detail_page: "public/img/project_detail/竹编几.pdf"
-				}, {
-					project_title: "OVO_STOOL",
-					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/project_img/OVO_STOOL.jpg",
-					project_detail_page: "public/img/project_detail/OVO_STOOL0.jpg"
-				}, {
-					project_title: "弹电吉他的维特鲁威人",
-					project_detail: "say something say something say something say something say something say something say something",
-					project_img: "public/img/project_img/弹电吉他的维特鲁威人.jpg",
-					project_detail_page: "public/img/project_detail/2015年夏季T恤图案设计.pdf"
-				}
+	project_title: "某种办公系统",
+	project_detail: "灰空间不是独立的第三空间，它具有暧昧性和多义性。是一个半封闭-半开放，半私密-半公共的独立空间。",
+	project_img: "public/img/project_img/PAVI_Office_system.jpg",
+	project_detail_page: "public/img/project_detail/PAVI1.jpg"
+}, {
+	project_title: "加湿器",
+	project_detail: "十成的竹，九成的工艺，留下一成属于它独有的自然与朴素。",
+	project_img: "public/img/project_img/加湿器.jpg",
+	project_detail_page: "public/img/project_detail/加湿器.pdf"
+}, {
+	project_title: "竹编几",
+	project_detail: "十成的竹，九成的工艺，留下一成属于它独有的自然与朴素。",
+	project_img: "public/img/project_img/竹编几.jpg",
+	project_detail_page: "public/img/project_detail/竹编几.pdf"
+}, {
+	project_title: "某种椅子",
+	project_detail: "一把蓝色的椅子。",
+	project_img: "public/img/project_img/OVO_STOOL.jpg",
+	project_detail_page: "public/img/project_detail/OVO_STOOL0.jpg"
+}, {
+	project_title: "弹电吉他的维特鲁威人",
+	project_detail: "快来买我！",
+	project_img: "public/img/project_img/弹电吉他的维特鲁威人.jpg",
+	project_detail_page: "public/img/project_detail/2015年夏季T恤图案设计.pdf"
+}
+];
+
+var projects_en = [{
+	project_title: "PAVI Office System",
+	project_detail: "say something say something say something say something say something say something say something",
+	project_img: "public/img/project_img/PAVI_Office_system.jpg",
+	project_detail_page: "public/img/project_detail/PAVI1.jpg"
+}, {
+	project_title: "Hamidifier",
+	project_detail: "say something say something say something say something say something say something say something",
+	project_img: "public/img/project_img/加湿器.jpg",
+	project_detail_page: "public/img/project_detail/加湿器.pdf"
+}, {
+	project_title: "Bamboo Desk",
+	project_detail: "say something say something say something say something say something say something say something",
+	project_img: "public/img/project_img/竹编几.jpg",
+	project_detail_page: "public/img/project_detail/竹编几.pdf"
+}, {
+	project_title: "OVO STOOL",
+	project_detail: "say something say something say something say something say something say something say something",
+	project_img: "public/img/project_img/OVO_STOOL.jpg",
+	project_detail_page: "public/img/project_detail/OVO_STOOL0.jpg"
+}, {
+	project_title: "Vitruvian Man Plays Electric Guitar",
+	project_detail: "say something say something say something say something say something say something say something",
+	project_img: "public/img/project_img/弹电吉他的维特鲁威人.jpg",
+	project_detail_page: "public/img/project_detail/2015年夏季T恤图案设计.pdf"
+}
 ];
 
 // ------------------------------
@@ -71,14 +100,17 @@ var PortfolioItem = React.createClass({
             thisStyle = {width: '100%'};
         }
         ReactDOM.render(
-            <div className="container">
-                <embed
-                    src={this.props.project['project_detail_page']}
-                    alt={this.props.project['project_title']}
-                    style={thisStyle}
-                />
-            </div>
-            , document.getElementById('portfolio_root'));
+        	<div>
+				<TopNavBar />
+				<div className="container divundernev">
+					<embed
+						src={this.props.project['project_detail_page']}
+						alt={this.props.project['project_title']}
+						style={thisStyle}
+					/>
+				</div>
+			</div>
+            , document.getElementById('PortfolioWrapper'));
 	},
 	render: function () {
 		return (
@@ -136,6 +168,37 @@ var PortfolioDisplay = React.createClass({
 	}
 });
 
+var PortfolioWrapper = React.createClass({
+	getInitialState(){
+		var lang = cookie.load("langOpt");
+		if (lang == "EN"){
+			return	{projects: projects_en};
+		} else if (lang == "JA"){
+			return	{projects: projects};
+		} else {
+			return	{projects: projects};
+		}
+	},
+	changeLang(lang){
+		if (lang == "EN"){
+			this.setState({projects: projects_en});
+		} else if (lang == "JA"){
+			this.setState({projects: projects});
+		} else {
+			this.setState({projects: projects});
+		}
+	},
+	render: function () {
+		return (
+			<div>
+				<TopNavBar changeLang={this.changeLang}/>
+				<div className="divundernev">
+					<PortfolioDisplay projects={this.state.projects}/>
+				</div>
+			</div>
+		);
+	}
+});
 
-ReactDOM.render(<TopNavBar />, document.getElementById('portfolio_header'));
-ReactDOM.render(<PortfolioDisplay projects={projects}/>, document.getElementById('portfolio_root'));
+
+ReactDOM.render(<PortfolioWrapper/>, document.getElementById('PortfolioWrapper'));
